@@ -1,7 +1,15 @@
+
 <% if @winner == nil %>
-This is a tie! Try again!
+<h3>This is a tie! Try again!</h3>
 <% elsif @winner == "invalid" %>
-One of the players chose an invalid option. Try Again!
+<h3>One of the players chose an invalid option. Try Again!</h3>
 <% else %>
-The winner is <%= @winner %> using <%= @hand %>
+<h3>The winner is <strong><%= @winner %></strong> using <strong><%= @hand %></strong></h3>
+  <% if @hand == "Paper" %>
+  <img src="/images/paper.jpg">
+  <% elsif @hand == "Scissors" %>
+  <img src="/images/scissors.jpg">
+  <% elsif @hand == "Rock" %>
+  <img src="/images/rock.jpg">
+  <% end %>
 <% end %>

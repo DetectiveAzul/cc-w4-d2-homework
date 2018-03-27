@@ -6,12 +6,6 @@ class Game
     @player2 = params[:player2].downcase
   end
 
-  def winner_hand()
-    return @player1.capitalize if check_winner() == "Player 1"
-    return @player2.capitalize if check_winner() == "Player 2"
-    return nil if check_winner() == nil
-  end
-
   def check_winner()
     return "invalid" unless valid_options?()
     return nil if @player1 == @player2
@@ -19,6 +13,12 @@ class Game
     return "Player 1" if @player1 == "paper" && @player2 == "rock"
     return "Player 1" if @player1 == "scissors" && @player2 == "paper"
     return "Player 2"
+  end
+
+  def winner_hand()
+    return @player1.capitalize if check_winner() == "Player 1"
+    return @player2.capitalize if check_winner() == "Player 2"
+    return nil if check_winner() == nil
   end
 
   def valid_options?()
@@ -29,4 +29,5 @@ class Game
       return false
     end
   end
+  
 end
