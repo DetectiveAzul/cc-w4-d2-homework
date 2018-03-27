@@ -1,5 +1,7 @@
 <% if @winner == nil %>
 This is a tie! Try again!
+<% elsif @winner == "invalid" %>
+One of the players chose an invalid option. Try Again!
 <% else %>
 The winner is <%= @winner %> using <%= @hand %>
 <% end %>
