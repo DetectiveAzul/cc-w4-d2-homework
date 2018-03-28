@@ -7,7 +7,7 @@ get '/' do
 end
 
 get '/:player1/:player2' do
-  p game = Game.new(params)
+  game = Game.new(params)
   @winner = game.check_winner()
   @hand = game.winner_hand()
   erb(:result)
